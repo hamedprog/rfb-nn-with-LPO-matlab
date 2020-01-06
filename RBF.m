@@ -17,7 +17,7 @@ num_test_all=0;
 epoch_max=200;
 
 num_class_zero=find(data(:,n)==0);
-data = [data;data(num_class_zero(1:217),:)];
+data = [data;data(num_class_zero(1:217),:)]; %add some zero labeled rows to equalize two classes
 
 %% create test and train data
 for i=0:num_class
@@ -33,7 +33,8 @@ for i=0:num_class
 end
 
 %% calculate centroids
-k=12;
+k=12; %%number of centroids (and gaussian neurons)
+
 max_iteration_kmeans = 100;
 
 centroids = data(1:k,1:n-1);
@@ -302,7 +303,6 @@ for j=1:num_train_all
             Output_con(j,:)=[1 0];
         case 1
             Output_con(j,:)=[0 1];
-            
     end
 end
 
