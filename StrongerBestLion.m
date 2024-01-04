@@ -19,4 +19,3 @@ bestlion1.pos = bestlion1.pos+ebest;
 bestlion1.cost = fitness(bestlion1.pos);
 
 end
-
